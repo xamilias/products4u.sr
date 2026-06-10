@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products4U | All Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #fffaf6;
+        --panel: #ffffff;
+        --text: #1f2937;
+        --muted: #5f6b7a;
+        --accent: #ff7a00;
+        --accent-dark: #d56000;
+        --border: #f0e2d3;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background: linear-gradient(180deg, #fffaf6 0%, #ffffff 100%);
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 18px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        padding: 10px 12px;
+        border-radius: 16px;
+        background: #1db954;
+        box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+      }
+
+      .brand {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--accent-dark);
+      }
+
+      .topbar .brand.logo {
+        background: #ffffff;
+        padding: 6px 10px;
+        border-radius: 10px;
+        display: inline-block;
+      }
+
+      .logo {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+
+      .products { color: #000000; }
+      .fouru { color: #1db954; }
+      .domain { color: #000000; }
+
+      .btn {
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.65rem 0.9rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .btn.secondary {
+        background: #fff;
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+        padding: 16px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.78rem;
+        color: var(--accent-dark);
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        line-height: 1.08;
+        margin: 6px 0;
+      }
+
+      .muted { color: var(--muted); }
+
+      .chip-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .search-wrap {
+        max-width: 1200px;
+        margin: 0 auto 16px;
+      }
+
+      .search-bar {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        font-size: 1rem;
+        box-shadow: 0 8px 18px rgba(31, 41, 55, 0.06);
+      }
+
+      .small { font-size: 0.92rem; margin-top: 6px; }
+
+      .chip {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: #fff7ef;
+        padding: 0.45rem 0.7rem;
+        font-size: 0.95rem;
+      }
+
+      .stats {
+        display: grid;
+        gap: 10px;
+      }
+
+      .stat-box {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+        background: linear-gradient(145deg, #fff6ed, #fff);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .product-card {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--panel);
+        padding: 12px;
+        box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 8px;
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent-dark);
+        font-weight: 700;
+      }
+
+      h3 { margin: 6px 0 4px; font-size: 1.05rem; }
+      .price { color: var(--accent-dark); font-weight: 800; font-size: 1.05rem; }
+
+      @media (max-width: 980px) {
+        .hero, .grid { grid-template-columns: 1fr 1fr; }
+      }
+
+      @media (max-width: 680px) {
+        .topbar, .hero, .grid { grid-template-columns: 1fr; }
+        .topbar { align-items: flex-start; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div>
+          <div class="brand logo" aria-label="Products4U.sr">
+            <span class="products">Products</span><span class="fouru">4U</span><span class="domain">.sr</span>
+          </div>
+          <div class="muted">All products • Fresh deals • Easy shopping</div>
+        </div>
+        <a class="btn secondary" href="index.html">Back to Home</a>
+      </header>
+
+      <section class="hero">
+        <article class="panel">
+          <p class="eyebrow">Shop everything</p>
+          <h1>See all our products in one place.</h1>
+          <p class="muted">Browse electronics, home decor, fashion, and wellness items with simple prices and clear categories.</p>
+          <div class="chip-row">
+            <span class="chip">Electronics</span>
+            <span class="chip">Home Decor</span>
+            <span class="chip">Fashion</span>
+            <span class="chip">Wellness</span>
+          </div>
+        </article>
+
+        <aside class="panel stats">
+          <div class="stat-box"><strong>24</strong><br />Featured items</div>
+          <div class="stat-box"><strong>Free</strong><br />Delivery on selected orders</div>
+          <div class="stat-box"><strong>Top rated</strong><br />Trusted products for daily use</div>
+        </aside>
+      </section>
+
+      <section class="search-wrap">
+        <input id="searchInput" class="search-bar" type="search" placeholder="Search products, categories, or brands..." />
+        <p class="muted small">Tip: try names like headphones, lamp, backpack, or wellness.</p>
+      </section>
+
+      <section class="grid" id="productGrid">
+        <p id="noResults" class="muted" style="display:none; grid-column: 1 / -1;">No products match your search.</p>
+        <article class="product-card" data-search="smart headphones electronics audio sound battery">
+          <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=800&q=80" alt="Headphones" />
+          <span class="tag">Electronics</span>
+          <h3>Smart Headphones</h3>
+          <p class="muted">Noise-canceling sound with 20-hour battery life.</p>
+          <div class="price">$49.99</div>
+        </article>
+
+        <article class="product-card" data-search="cozy lamp home decor warm light bedroom desk">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80" alt="Lamp" />
+          <span class="tag">Home Decor</span>
+          <h3>Cozy Lamp</h3>
+          <p class="muted">Warm LED light for desks, bedrooms, and cozy corners.</p>
+          <div class="price">$24.50</div>
+        </article>
+
+        <article class="product-card" data-search="travel backpack fashion spacious lightweight everyday bag">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Backpack" />
+          <span class="tag">Fashion</span>
+          <h3>Travel Backpack</h3>
+          <p class="muted">Spacious and lightweight for everyday travel.</p>
+          <div class="price">$39.00</div>
+        </article>
+
+        <article class="product-card" data-search="fitness bottle wellness insulated gym travel hydration water">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Bottle" />
+          <span class="tag">Wellness</span>
+          <h3>Fitness Bottle</h3>
+          <p class="muted">Insulated bottle for gym, travel, and daily hydration.</p>
+          <div class="price">$18.00</div>
+        </article>
+
+        <article class="product-card" data-search="smart watch electronics fitness notifications activity tracker">
+          <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="Smart Watch" />
+          <span class="tag">Electronics</span>
+          <h3>Smart Watch</h3>
+          <p class="muted">Track fitness, notifications, and daily activity easily.</p>
+          <div class="price">$59.99</div>
+        </article>
+
+        <article class="product-card" data-search="scented candle home decor fragrance calming aroma relax">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Scented candle" />
+          <span class="tag">Home Decor</span>
+          <h3>Scented Candle</h3>
+          <p class="muted">A calming fragrance to refresh your home atmosphere.</p>
+          <div class="price">$14.00</div>
+        </article>
+      </section>
+    </div>
+
+    <script>
+      const searchInput = document.getElementById('searchInput');
+      const cards = document.querySelectorAll('.product-card');
+      const noResults = document.getElementById('noResults');
+
+      searchInput.addEventListener('input', () => {
+        const term = searchInput.value.trim().toLowerCase();
+
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const text = (card.getAttribute('data-search') || '').toLowerCase();
+          const match = text.includes(term);
+          card.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      });
+    </script>
+  </body>
+</html>
