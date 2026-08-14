@@ -67,11 +67,36 @@
 
      
 
+      <section class="section" id="settings">
+        <h2>Settings</h2>
+        <p>Manage the shop from the admin dashboard.</p>
+        <button class="primary-btn" type="button" id="adminLoginBtn">Admin Login</button>
+      </section>
+
       <section class="section promo-box" id="contact">
         <h2>Need help choosing?</h2>
         <p>Our team is ready to help you find the perfect product for your style and budget.</p>
         <a class="primary-btn" href="mailto:support@products4u.example">Contact Us</a>
       </section>
     </main>
+
+    <div class="modal" id="loginModal" hidden>
+      <div class="modal-card">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" required />
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <p class="form-error" id="loginError" hidden>Wrong username or password.</p>
+          <div class="modal-actions">
+            <button class="primary-btn" type="submit">Log in</button>
+            <button class="ghost-btn" type="button" id="cancelLogin">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="admin-login.js"></script>
   </body>
 </html>
